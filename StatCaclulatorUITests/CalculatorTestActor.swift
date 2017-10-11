@@ -8,9 +8,11 @@
 
 import XCTest
 
+
 class CalculatorTestActor: NSObject {
         
     let app: XCUIApplication!
+    var expectation:XCTestExpectation?
     
     init(application: XCUIApplication) {
         app = application
@@ -19,7 +21,10 @@ class CalculatorTestActor: NSObject {
     // MARK: Helper Methods
     func pressButton(_ identifier: String) {
         let button = TestUtility.getXCUIElement(app, identifier: identifier, type: "button")
+//        let exists = NSPredicate(format: "exists == true")
+//        expectation(for: exists, evaluatedWithObject: button, handler: nil)
         button.tap()
+//        waitForExpectations(timeout: 10, handler: nil)
     }
     
     func pressNavigationButton(_ identifier: String, navigation: String) {
@@ -33,6 +38,7 @@ class CalculatorTestActor: NSObject {
     
     func inputNumbers(_ isEnterNeeded: Bool) {
         for index in 1...5 {
+            
             pressButton("num\(index)Button")
             if isEnterNeeded {
                 pressEnterButton()

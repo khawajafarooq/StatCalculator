@@ -21,7 +21,7 @@ class CalculatorViewControllerUITests: XCTestCase {
         tester.app.launch()
         
         // wait until ui loads
-        sleep(1)
+        sleep(2)
     }
     
     override func tearDown() {

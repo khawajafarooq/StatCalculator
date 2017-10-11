@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GHT-Un-dww">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GHT-Un-dww">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Number Table View Controller-->
@@ -11,15 +15,15 @@
             <objects>
                 <tableViewController id="kVY-o4-DYt" customClass="NumberTableViewController" customModule="StatCaclulator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qCY-GH-FPw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CKNumberCell" id="AK1-v7-Wqz" customClass="NumberTableViewCell" customModule="StatCaclulator" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AK1-v7-Wqz" id="msk-gA-ylI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PVg-mS-Gp8">
@@ -72,18 +76,18 @@
                         <viewControllerLayoutGuide type="bottom" id="CQO-YQ-SK9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fK6-qk-lvF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="45" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWA-iP-fyZ">
-                                <rect key="frame" x="20" y="72" width="560" height="45"/>
+                                <rect key="frame" x="-201" y="72" width="560" height="45"/>
                                 <accessibility key="accessibilityConfiguration" identifier="displayLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bE-I8-CdZ">
-                                <rect key="frame" x="28" y="220" width="130" height="87"/>
+                                <rect key="frame" x="24" y="233.5" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num7Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="7"/>
@@ -92,7 +96,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="80" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2q-nE-9Hd">
-                                <rect key="frame" x="28" y="125" width="130" height="87"/>
+                                <rect key="frame" x="24" y="125" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="clearButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="C"/>
@@ -101,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8l2-7k-ThX">
-                                <rect key="frame" x="28" y="505" width="130" height="87"/>
+                                <rect key="frame" x="24" y="558.5" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="backButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="←"/>
@@ -110,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncf-0I-KlK">
-                                <rect key="frame" x="166" y="220" width="130" height="87"/>
+                                <rect key="frame" x="108" y="233.5" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num8Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="8"/>
@@ -119,7 +123,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zG-14-hg6">
-                                <rect key="frame" x="304" y="220" width="130" height="87"/>
+                                <rect key="frame" x="191.5" y="233.5" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num9Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="9"/>
@@ -128,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAI-2Z-t8d">
-                                <rect key="frame" x="28" y="315" width="130" height="87"/>
+                                <rect key="frame" x="24" y="342" width="76" height="100"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num4Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="4"/>
@@ -137,7 +141,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCa-vK-0bi">
-                                <rect key="frame" x="166" y="315" width="130" height="87"/>
+                                <rect key="frame" x="108" y="342" width="75.5" height="100"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num5Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="5"/>
@@ -146,7 +150,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkY-bN-Xvr">
-                                <rect key="frame" x="304" y="315" width="130" height="87"/>
+                                <rect key="frame" x="191.5" y="342" width="76" height="100"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num6Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="6"/>
@@ -155,7 +159,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-VJ-g5c">
-                                <rect key="frame" x="28" y="410" width="130" height="87"/>
+                                <rect key="frame" x="24" y="450" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num1Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="1"/>
@@ -164,7 +168,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-j1-soh">
-                                <rect key="frame" x="166" y="410" width="130" height="87"/>
+                                <rect key="frame" x="108" y="450" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num2Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="2"/>
@@ -173,7 +177,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXb-Xa-J1c">
-                                <rect key="frame" x="166" y="505" width="130" height="87"/>
+                                <rect key="frame" x="108" y="558.5" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num0Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="0"/>
@@ -182,7 +186,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-Mf-SkG">
-                                <rect key="frame" x="304" y="505" width="130" height="87"/>
+                                <rect key="frame" x="191.5" y="558.5" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="enterButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="⏎"/>
@@ -191,7 +195,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-eJ-wpq">
-                                <rect key="frame" x="442" y="220" width="130" height="87"/>
+                                <rect key="frame" x="275.5" y="233.5" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="meanSqrButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Mean Sqr"/>
@@ -200,7 +204,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k39-au-Vqx">
-                                <rect key="frame" x="304" y="125" width="130" height="87"/>
+                                <rect key="frame" x="191.5" y="125" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="varianceButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Variance"/>
@@ -209,7 +213,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHf-3C-Zxm">
-                                <rect key="frame" x="166" y="125" width="130" height="87"/>
+                                <rect key="frame" x="108" y="125" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="stdDevButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="StdDev"/>
@@ -218,7 +222,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDX-Tn-gtB">
-                                <rect key="frame" x="442" y="315" width="130" height="87"/>
+                                <rect key="frame" x="275.5" y="342" width="75.5" height="100"/>
                                 <accessibility key="accessibilityConfiguration" identifier="meanButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Mean"/>
@@ -227,7 +231,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-BR-btx">
-                                <rect key="frame" x="442" y="410" width="130" height="87"/>
+                                <rect key="frame" x="275.5" y="450" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="sumButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Sum"/>
@@ -236,7 +240,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9s-al-gZY">
-                                <rect key="frame" x="304" y="410" width="130" height="87"/>
+                                <rect key="frame" x="191.5" y="450" width="76" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="num3Button"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="3"/>
@@ -245,7 +249,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVw-xy-3G4">
-                                <rect key="frame" x="442" y="505" width="130" height="87"/>
+                                <rect key="frame" x="275.5" y="558.5" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="quartileButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Quartile"/>
@@ -254,7 +258,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJE-Q1-WOJ">
-                                <rect key="frame" x="442" y="125" width="130" height="87"/>
+                                <rect key="frame" x="275.5" y="125" width="75.5" height="100.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="medianButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Median"/>
@@ -263,7 +267,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DCa-vK-0bi" firstAttribute="height" secondItem="X2q-nE-9Hd" secondAttribute="height" id="2TL-nX-pY1"/>
                             <constraint firstItem="gJE-Q1-WOJ" firstAttribute="top" secondItem="tWA-iP-fyZ" secondAttribute="bottom" constant="8" id="3LK-75-HhS"/>
@@ -384,7 +388,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GHT-Un-dww" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3H-Ss-MZq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
