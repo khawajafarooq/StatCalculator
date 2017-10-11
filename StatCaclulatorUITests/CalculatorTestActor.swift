@@ -17,12 +17,12 @@ class CalculatorTestActor: NSObject {
     }
     
     // MARK: Helper Methods
-    func pressButton(identifier: String) {
+    func pressButton(_ identifier: String) {
         let button = TestUtility.getXCUIElement(app, identifier: identifier, type: "button")
         button.tap()
     }
     
-    func pressNavigationButton(identifier: String, navigation: String) {
+    func pressNavigationButton(_ identifier: String, navigation: String) {
         let button = TestUtility.getNavigationButton(app, identifier: identifier, navigation: navigation)
         button.tap()
     }
@@ -31,7 +31,7 @@ class CalculatorTestActor: NSObject {
         return Int(app.tables.count)
     }
     
-    func inputNumbers(isEnterNeeded: Bool) {
+    func inputNumbers(_ isEnterNeeded: Bool) {
         for index in 1...5 {
             pressButton("num\(index)Button")
             if isEnterNeeded {
@@ -40,12 +40,12 @@ class CalculatorTestActor: NSObject {
         }
     }
     
-    func getTextField(cell: XCUIElement) -> XCUIElement {
-        return cell.childrenMatchingType(.TextField).element
+    func getTextField(_ cell: XCUIElement) -> XCUIElement {
+        return cell.children(matching: .textField).element
     }
     
-    func getCellByIndex(index: UInt) -> XCUIElement {
-        return app.tables.childrenMatchingType(.Cell).elementBoundByIndex(index)
+    func getCellByIndex(_ index: UInt) -> XCUIElement {
+        return app.tables.children(matching: .cell).element(boundBy: index)
     }
     
     func setInput() {
@@ -123,7 +123,7 @@ class CalculatorTestActor: NSObject {
         tablesQuery.buttons["Delete"].tap()
     }
     
-    func editCellValue(text: String) -> String {
+    func editCellValue(_ text: String) -> String {
         let cell = getCellByIndex(0)
         let textField = getTextField(cell)
         textField.clearAndEnterText(text)
@@ -132,7 +132,7 @@ class CalculatorTestActor: NSObject {
     
     func getCellValue() -> String {
         let cell = getCellByIndex(0)
-        let staticText = cell.childrenMatchingType(.StaticText).element
+        let staticText = cell.children(matching: .staticText).element
         return staticText.label
     }
     

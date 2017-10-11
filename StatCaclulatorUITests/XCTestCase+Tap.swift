@@ -17,7 +17,7 @@ extension XCTestCase {
             if keyboard.exists {
                 break;
             }
-            NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.5))
+            RunLoop.current.run(until: Date(timeIntervalSinceNow: 0.5))
         }
     }
 }
