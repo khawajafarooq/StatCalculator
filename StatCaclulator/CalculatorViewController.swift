@@ -27,7 +27,8 @@ class CalculatorViewController: UIViewController {
         
         get {
             
-            let displayNum = NSNumberFormatter().numberFromString(displayValue.text!)!.doubleValue
+            let number = NumberFormatter().number(from: displayValue.text!)!
+            let displayNum = number.doubleValue
             return displayNum.isNaN ? nil : displayNum
         }
         set {
@@ -47,25 +48,26 @@ class CalculatorViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // register notification
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refreshOperandStack(_:)), name: Constants.NotificationKey.DeleteItem, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refreshData(_:)), name: Constants.NotificationKey.RefreshData, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(clearData), name: Constants.NotificationKey.ClearData, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshOperandStack(notification:)), name: NSNotification.Name(rawValue: Constants.NotificationKey.DeleteItem), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData(notification:)), name: NSNotification.Name(rawValue: Constants.NotificationKey.RefreshData), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(clearData), name: NSNotification.Name(rawValue: Constants.NotificationKey.ClearData), object: nil)
     }
     
     // MARK: Notification methods
-    func refreshOperandStack(notification: NSNotification) {
+    func refreshOperandStack(notification: Notification) {
         if let data = notification.object as! NSDictionary! {
             
-            let index: Int = (data.valueForKey(Constants.GNRC.ItemIndex)?.integerValue)!
-            calculator.removeOperandAtIndex(index)
+            let index = (data.value(forKey: Constants.GNRC.ItemIndex)) as! Int
+            calculator.removeOperand(at: index)
         }
-        
     }
     
     func refreshData(notification: NSNotification) {
         if let data = notification.object as! NSDictionary! {
             
-            let dataArray: Array<Double> = (data.valueForKey(Constants.GNRC.DataItem)) as! Array<Double>
+            let dataArray = (data.value(forKey: Constants.GNRC.DataItem)) as! [Double]
             calculator.operandStack = dataArray
         }
     }
@@ -81,10 +83,10 @@ class CalculatorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "NumberList") {
             //get a reference to the destination view controller
-            let destinationVC:NumberTableViewController = segue.destinationViewController as! NumberTableViewController
+            let destinationVC:NumberTableViewController = segue.destination as! NumberTableViewController
             destinationVC.data = calculator.operandStack
         }
     }
@@ -172,7 +174,7 @@ class CalculatorViewController: UIViewController {
         enteredValue = nil
     }
     
-    func numberEntered(number: String) {
+    func numberEntered(_ number: String) {
         
         if userInTheMiddleOfTypingNumber {
             
@@ -191,7 +193,7 @@ class CalculatorViewController: UIViewController {
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

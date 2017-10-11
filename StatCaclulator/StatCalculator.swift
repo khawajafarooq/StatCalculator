@@ -10,7 +10,7 @@ import Foundation
 
 class StatCalculator: NSObject {
     
-    var operandStack = Array<Double>()
+    var operandStack: [Double] = []
     
     enum Operation: String {
         
@@ -23,7 +23,7 @@ class StatCalculator: NSObject {
         case Quartile = "7"
     }
     
-    func pushOperand(operand: Double) {
+    func pushOperand(_ operand: Double) {
         
         operandStack.append(operand)
     }
@@ -34,15 +34,15 @@ class StatCalculator: NSObject {
         }
     }
     
-    func removeOperandAtIndex(index: Int) {
+    func removeOperand(at index: Int) {
         if !operandStack.isEmpty && index < operandStack.count {
             
             // Deleting operand from stack
-            operandStack.removeAtIndex(index)
+            operandStack.remove(at: index)
         }
     }
     
-    func evaluate(Op: String) -> Double? {
+    func evaluate(_ Op: String) -> Double? {
         if !operandStack.isEmpty {
             
             switch Op {
@@ -75,7 +75,7 @@ class StatCalculator: NSObject {
     }
     
     // MARK: Computation Methods
-    func getMeanSquaredSum(array: Array<Double>) -> Double {
+    func getMeanSquaredSum(_ array: [Double]) -> Double {
         
         var result = Array<Double>()
         for index in 0..<operandStack.count {
@@ -83,34 +83,34 @@ class StatCalculator: NSObject {
             result.append(number*number)
         }
         
-        return getMean(result).roundToPlaces(2)
+        return getMean(result).round(to: 2)
     }
     
-    func getSum(array: Array<Double>) -> Double {
-        return array.reduce(0, combine: +)
+    func getSum(_ array: [Double]) -> Double {
+        return array.reduce(0, +)
     }
     
-    func getMean(array: Array<Double>) -> Double {
-        return (getSum(array) / Double(array.count)).roundToPlaces(2)
+    func getMean(_ array: [Double]) -> Double {
+        return (getSum(array) / Double(array.count)).round(to: 2)
     }
     
-    func getVariance(array: Array<Double>) -> Double {
+    func getVariance(_ array: [Double]) -> Double {
         let mean = getMean(array)
         var temp: Double = 0;
         for val in array {
             temp += (mean - val) * (mean - val)
         }
     
-        return Double(temp / Double(array.count)).roundToPlaces(2)
+        return Double(temp / Double(array.count)).roundround(to: 2)
     }
     
-    func getStdDev(array: Array<Double>) -> Double {
-        return Double(sqrt(getVariance(array))).roundToPlaces(2)
+    func getStdDev(_ array: [Double]) -> Double {
+        return Double(sqrt(getVariance(array))).round(to: 2)
     }
     
-    func getMedian(array: Array<Double>) -> Double {
+    func getMedian(_ array: [Double]) -> Double {
         
-        let arr = array.sort(<)
+        let arr = array.sorted(by: <)
         
         if (arr.count % 2 == 0) {
             return (Double(arr[(arr.count/2) - 1]) + Double(arr[arr.count/2]))/2;
@@ -121,7 +121,7 @@ class StatCalculator: NSObject {
         }   
     }
     
-    func getQuartile(array: Array<Double>) -> Double {
+    func getQuartile(_ array: [Double]) -> Double {
         
         // need to develop solution
         return 0
