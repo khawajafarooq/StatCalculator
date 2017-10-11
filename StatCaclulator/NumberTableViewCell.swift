@@ -15,10 +15,10 @@ class NumberTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.editableTextField.hidden = true
+        self.editableTextField.isHidden = true
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
@@ -27,8 +27,8 @@ class NumberTableViewCell: UITableViewCell {
     func configureCell(editing: Bool) {
         
         self.editableTextField.text = self.textLabel?.text
-        self.editableTextField.hidden = !editing
-        self.textLabel?.hidden = editing
+        self.editableTextField.isHidden = !editing
+        self.textLabel?.isHidden = editing
     }
     
     @IBAction func negateClicked(sender: AnyObject) {
