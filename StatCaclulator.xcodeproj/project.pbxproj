@@ -312,6 +312,7 @@
 					};
 					03A839E01D47149B00C8541C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8TS22L53R5;
 						TestTargetID = 03A839CC1D47149B00C8541C;
 					};
 					03A839EB1D47149B00C8541C = {
@@ -559,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8TS22L53R5;
 				INFOPLIST_FILE = StatCaclulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xmen.StatCaclulatorTests;
@@ -571,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8TS22L53R5;
 				INFOPLIST_FILE = StatCaclulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xmen.StatCaclulatorTests;
