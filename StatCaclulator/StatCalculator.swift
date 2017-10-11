@@ -83,7 +83,8 @@ class StatCalculator: NSObject {
             result.append(number*number)
         }
         
-        return getMean(result).round(to: 2)
+        var mean = getMean(result)
+        return mean.round(to: 2)
     }
     
     func getSum(_ array: [Double]) -> Double {
@@ -91,7 +92,8 @@ class StatCalculator: NSObject {
     }
     
     func getMean(_ array: [Double]) -> Double {
-        return (getSum(array) / Double(array.count)).round(to: 2)
+        var mean = (getSum(array) / Double(array.count))
+        return mean.round(to: 2)
     }
     
     func getVariance(_ array: [Double]) -> Double {
@@ -100,12 +102,14 @@ class StatCalculator: NSObject {
         for val in array {
             temp += (mean - val) * (mean - val)
         }
-    
-        return Double(temp / Double(array.count)).roundround(to: 2)
+        
+        var variance = Double(temp / Double(array.count))
+        return variance.round(to: 2)
     }
     
     func getStdDev(_ array: [Double]) -> Double {
-        return Double(sqrt(getVariance(array))).round(to: 2)
+        var stdDev = Double(sqrt(getVariance(array)))
+        return stdDev.round(to: 2)
     }
     
     func getMedian(_ array: [Double]) -> Double {
