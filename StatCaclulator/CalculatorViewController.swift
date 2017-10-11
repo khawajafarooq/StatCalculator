@@ -48,11 +48,11 @@ class CalculatorViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // register notification
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshOperandStack(notification:)), name: NSNotification.Name(rawValue: Constants.NotificationKey.DeleteItem), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshOperandStack(notification:)), name: Notification.Name(rawValue: Constants.NotificationKey.DeleteItem), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshData(notification:)), name: NSNotification.Name(rawValue: Constants.NotificationKey.RefreshData), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData(notification:)), name: Notification.Name(rawValue: Constants.NotificationKey.RefreshData), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(clearData), name: NSNotification.Name(rawValue: Constants.NotificationKey.ClearData), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clearData), name: Notification.Name(rawValue: Constants.NotificationKey.ClearData), object: nil)
     }
     
     // MARK: Notification methods

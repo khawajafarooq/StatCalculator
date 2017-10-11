@@ -24,7 +24,7 @@ class NumberTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(editing: Bool) {
+    func configureCell(_ editing: Bool) {
         
         self.editableTextField.text = self.textLabel?.text
         self.editableTextField.isHidden = !editing
